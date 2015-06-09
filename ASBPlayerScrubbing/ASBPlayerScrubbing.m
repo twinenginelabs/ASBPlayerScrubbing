@@ -153,7 +153,9 @@
         track = tracks[0];
     }
     
-    return track.nominalFrameRate;
+    // TEL - Override nominalFrameRateForPlayer
+    // For HLS streams, the above always returns 0.0
+    return 30.0;
 }
 
 - (void)setupSliderTap
